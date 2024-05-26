@@ -25,7 +25,7 @@ This is a simple Point of Sale (POS) system built with the Django framework. The
     ```bash
     git clone https://github.com/DaveOuma/POS-system-with-Django-.git
 
-    cd django-pos-system
+    cd POS-system-with-Django-
     ```
 
 2. **Create a virtual environment and activate it:**
