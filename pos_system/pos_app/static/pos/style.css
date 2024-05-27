@@ -4,7 +4,9 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: greenyellow;   
+    background-color: white; 
+    background-image: url("../pos/images/background.jpg");
+
 }
 
 table {
@@ -19,11 +21,11 @@ th, td {
 }
 
 th {
-    background-color: #e4b0b0;
+    background-color: #127aeb;
 }
 
 tr:hover {
-    background-color: #5f0af3;
+    background-color: whitesmoke;
 }
 
 .form-group {
@@ -44,7 +46,7 @@ tr:hover {
 }
 
 .button {
-    background-color: #8410a4;
+    background-color: #07055d;
     color: white;
     padding: 10px 20px;
     text-align: center;
