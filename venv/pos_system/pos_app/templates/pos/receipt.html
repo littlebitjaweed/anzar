@@ -8,14 +8,23 @@
     <link rel="stylesheet" href="{% static 'pos/style.css' %}">
 </head>
 <body>
-    <div class="receipt">
+    {% comment %} <div class="receipt">
         <h1>Sales Receipt</h1>
         <p>Product: {{ sale.product.name }}</p>
         <p>Quantity: {{ sale.quantity }}</p>
         <p>Price per unit: ${{ sale.product.price }}</p>
-        <p>Total: ${{ sale.quantity|floatformat:2|mul:sale.product.price }}</p>
+        <p>Total: $   {{ ((sale.quantity|default_if_none:"1")|add:1) * sale.product.price }}   </p>       
         <p>Date: {{ sale.date }}</p>
         <button onclick="window.print()" class="button">Print</button>
-    </div>
+    </div> {% endcomment %}
+        <div class="receipt">
+            <h1>Sales Receipt</h1>
+            <p>Product: {{ sale.product.name }}</p>
+            <p>Quantity: {{ sale.quantity|default_if_none:"0" }}</p>
+            <p>Price per unit: ${{ sale.product.price }}</p>
+            <p>Total: ${{ total_price }}</p>
+            <p>Date: {{ sale.date }}</p>
+            <button onclick="window.print()" class="button">Print</button>
+        </div>
 </body>
 </html>

@@ -27,6 +27,14 @@ def sales_list(request):
     sales = Sale.objects.all()
     return render(request, 'pos/sales_list.html', {'sales': sales})
 
+# def receipt(request, sale_id):
+#     sale = get_object_or_404(Sale, id=sale_id)
+#     return render(request, 'pos/receipt.html', {'sale': sale})
 def receipt(request, sale_id):
-    sale = get_object_or_404(Sale, id=sale_id)
-    return render(request, 'pos/receipt.html', {'sale': sale})
+    sale = get_object_or_404(Sale, pk=sale_id)
+    total_price = (sale.quantity or 0) * sale.product.price
+    context = {
+        'sale': sale,
+        'total_price': total_price,
+    }
+    return render(request, 'pos/receipt.html', context)
