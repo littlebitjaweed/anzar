@@ -1,1 +1,1 @@
-web: gunicorn POS_System.wsgi
+web: gunicorn pos_system.pos_system.wsgi
